@@ -18,6 +18,12 @@ jobs:
         with:
           node-version: 24
           cache: yarn
+          
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Set up Yarn 4
+        run: corepack prepare yarn@4.18.1 --activate
 
       - name: Install dependencies
         run: yarn install --immutable
